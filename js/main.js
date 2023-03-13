@@ -118,7 +118,7 @@ const containerFlexDom = document.querySelector(".containerFlex");
 const categoriaCambiata = document.getElementById("categories");
 
 let listaInserire = [];
-let posizioneVedere =[];
+
 
 for (let i = 0; i < iconList.length; i++) {
 
@@ -133,44 +133,43 @@ for (let i = 0; i < iconList.length; i++) {
     let iconBoxDom = document.querySelector(".iconBox");
 
 
+
    // let pBDom = document.querySelectorAll(".pB");
    // pBDom[i].style.color = iconList[i].color;
 
-    categoriaCambiata.addEventListener("change", function cambioCategoria(){
-    let valoreCategoria = categoriaCambiata.value;
-    
-    
-    if (iconList[i].type  == categoriaCambiata.value) {
-        listaInserire.push(iconList[i]);
-        console.log(listaInserire);
-        containerFlexDom.innerHTML = ""; 
-        for (let c = 0; i < listaInserire.length; c++) {
-
-    
-            containerFlexDom.innerHTML =
-            `
-                <div class="iconBox flexBox ${listaInserire[c].type}">
-                    <i style = "color: ${listaInserire[c].color};"  class="pB fa-solid ${listaInserire[c].prefix}${listaInserire[i].name}"></i>
-                    <h3>${listaInserire[c].name.toUpperCase()}</h3>
-                </div>
-            `;
-        }
-   
-
-    }
-
-
-
-
-    return valoreCategoria
-   } );
-
-    
-
-        
-        
 }
 
+categoriaCambiata.addEventListener("change", function cambioCategoria(){
+    let valoreCategoria = categoriaCambiata.value;
+    listaInserire = [];
+    containerFlexDom.innerHTML = "";
+    
+    
+    for(let c = 0; c < iconList.length; c++) {
+        
+        if (iconList[c].type  == categoriaCambiata.value) {
+            
+            listaInserire.push(iconList[c]);
+            console.log(listaInserire);
+            
+            
+            containerFlexDom.innerHTML +=
+                `
+                    <div class="iconBox flexBox ${listaInserire.type}">
+                        <i style = "color: ${iconList[c].color};"  class="pB fa-solid ${iconList[c].prefix}${iconList[c].name}"></i>
+                        <h3>${iconList[c].name.toUpperCase()}</h3>
+                    </div>
+                `;
+       
+    
+        }
+    }
+    
+
+
+
+
+   } );
 
 
 
