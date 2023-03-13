@@ -149,9 +149,9 @@ for (let i = 0; i < iconList.length; i++) {
     
             containerFlexDom.innerHTML =
             `
-                <div class="iconBox flexBox ${listaInserire[i].type}">
-                    <i style = "color: ${listaInserire[i].color};"  class="pB fa-solid ${listaInserire[i].prefix}${listaInserire[i].name}"></i>
-                    <h3>${listaInserire[i].name.toUpperCase()}</h3>
+                <div class="iconBox flexBox ${listaInserire[c].type}">
+                    <i style = "color: ${listaInserire[c].color};"  class="pB fa-solid ${listaInserire[c].prefix}${listaInserire[i].name}"></i>
+                    <h3>${listaInserire[c].name.toUpperCase()}</h3>
                 </div>
             `;
         }
