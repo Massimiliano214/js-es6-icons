@@ -115,15 +115,45 @@ let iconList = [
 
 const containerFlexDom = document.querySelector(".containerFlex");
 
+const categoriaCambiata = document.getElementById("categories");
+const valoreCategoria = categoriaCambiata.value;
+
 for (let i = 0; i < iconList.length; i++) {
+
+
     containerFlexDom.innerHTML +=
     `
-        <div class="iconBox flexBox">
-            <i class="pB fa-solid ${iconList[i].prefix}${iconList[i].name}"></i>
+        <div class="iconBox flexBox ${iconList[i].type}">
+            <i style = "color: ${iconList[i].color};"  class="pB fa-solid ${iconList[i].prefix}${iconList[i].name}"></i>
             <h3>${iconList[i].name.toUpperCase()}</h3>
         </div>
     `;
-    let pBDom = document.querySelectorAll(".pB");
-    pBDom.style.color = iconList[i].color;
+    
+    let iconBoxDom = document.querySelector(".iconBox");
+
+    categories.addEventListener("change", sceltaCategoria(iconList[i].type), containerFlexDom, valoreCategoria);
+
+   // let pBDom = document.querySelectorAll(".pB");
+   // pBDom[i].style.color = iconList[i].color;
 }
 
+
+
+
+
+
+
+
+
+function sceltaCategoria(type, currentElement, value) {
+    
+    console.log(value);
+
+    if (value == type) {
+        //currentElement.classList.add("")
+        console.log(value);
+        containerFlexDom.innerHTML = "";
+        //containerFlexDom.innerHTML
+    }
+    
+}
