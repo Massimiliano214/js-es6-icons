@@ -112,3 +112,15 @@ let iconList = [
 		color: 'blue'
 	}
 ];
+
+const containerFlexDom = document.querySelector(".containerFlex");
+
+for (let i = 0; i < iconList.length; i++) {
+    containerFlexDom.innerHTML +=
+    `
+        <div class="iconBox flexBox">
+            <i class="pB fa-solid ${iconList[i].prefix}${iconList[i].name}"></i>
+            <h3>${iconList[i].name.toUpperCase()}</h3>
+        </div>
+    `;
+}
