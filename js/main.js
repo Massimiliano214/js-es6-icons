@@ -160,8 +160,24 @@ categoriaCambiata.addEventListener("change", function cambioCategoria(){
                         <h3>${iconList[c].name.toUpperCase()}</h3>
                     </div>
                 `;
-       
+            
+                console.log(iconList[c].type)
     
+        } else if (categoriaCambiata.value == "all") {
+            containerFlexDom.innerHTML = "";
+            for (let i = 0; i < iconList.length; i++) {
+
+    
+                containerFlexDom.innerHTML +=
+                `
+                    <div class="iconBox flexBox ${iconList[i].type}">
+                        <i style = "color: ${iconList[i].color};"  class="pB fa-solid ${iconList[i].prefix}${iconList[i].name}"></i>
+                        <h3>${iconList[i].name.toUpperCase()}</h3>
+                    </div>
+                `;
+                
+            
+            }
         }
     }
     
