@@ -27,6 +27,7 @@ h1 {
 
 .mainDown {
     background-color: lightgray;
+    display: flex;
 }
 
 .containerFlex {
@@ -57,4 +58,5 @@ h1 {
 
 .pB {
     margin-bottom: 5px;
+    font-size: 2.5rem;
 }

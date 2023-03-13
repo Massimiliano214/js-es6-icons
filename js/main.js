@@ -123,4 +123,7 @@ for (let i = 0; i < iconList.length; i++) {
             <h3>${iconList[i].name.toUpperCase()}</h3>
         </div>
     `;
+    let pBDom = document.querySelectorAll(".pB");
+    pBDom.style.color = iconList[i].color;
 }
+
