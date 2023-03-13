@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 
-
-.header {
+body {
+    background-color: lightgray;
+}
+header {
     background-color: white;
 }
 
@@ -28,6 +30,7 @@ h1 {
 .mainDown {
     background-color: lightgray;
     display: flex;
+    
 }
 
 .containerFlex {

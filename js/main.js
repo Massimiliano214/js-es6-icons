@@ -116,11 +116,13 @@ let iconList = [
 const containerFlexDom = document.querySelector(".containerFlex");
 
 const categoriaCambiata = document.getElementById("categories");
-const valoreCategoria = categoriaCambiata.value;
+
+let listaInserire = [];
+let posizioneVedere =[];
 
 for (let i = 0; i < iconList.length; i++) {
 
-
+    
     containerFlexDom.innerHTML +=
     `
         <div class="iconBox flexBox ${iconList[i].type}">
@@ -128,32 +130,69 @@ for (let i = 0; i < iconList.length; i++) {
             <h3>${iconList[i].name.toUpperCase()}</h3>
         </div>
     `;
-    
     let iconBoxDom = document.querySelector(".iconBox");
 
-    categories.addEventListener("change", sceltaCategoria(iconList[i].type), containerFlexDom, valoreCategoria);
 
    // let pBDom = document.querySelectorAll(".pB");
    // pBDom[i].style.color = iconList[i].color;
-}
 
-
-
-
-
-
-
-
-
-function sceltaCategoria(type, currentElement, value) {
+    categoriaCambiata.addEventListener("change", function cambioCategoria(){
+    let valoreCategoria = categoriaCambiata.value;
     
-    console.log(value);
+    
+    if (iconList[i].type  == categoriaCambiata.value) {
+        listaInserire.push(iconList[i]);
+        console.log(listaInserire);
+        containerFlexDom.innerHTML = ""; 
+        for (let c = 0; i < listaInserire.length; c++) {
 
-    if (value == type) {
-        //currentElement.classList.add("")
-        console.log(value);
-        containerFlexDom.innerHTML = "";
-        //containerFlexDom.innerHTML
+    
+            containerFlexDom.innerHTML =
+            `
+                <div class="iconBox flexBox ${listaInserire[i].type}">
+                    <i style = "color: ${listaInserire[i].color};"  class="pB fa-solid ${listaInserire[i].prefix}${listaInserire[i].name}"></i>
+                    <h3>${listaInserire[i].name.toUpperCase()}</h3>
+                </div>
+            `;
+        }
+   
+
     }
+
+
+
+
+    return valoreCategoria
+   } );
+
     
+
+        
+        
 }
+
+
+
+
+
+       
+
+
+
+/*function sceltaCategoria(type, currentElement, value) {
+    
+    
+
+    if (value == "all") {
+        //currentElement.classList.add("")
+        console.log("if");
+        currentElement.innerHTML = "";
+        //containerFlexDom.innerHTML
+    } else {
+        console.log("casa");
+
+    }
+    return currentElement;
+}
+
+*/
